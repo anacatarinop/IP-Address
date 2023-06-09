@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.container {
+    @include flex-center();
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    header {
+        position: absolute;
+        top: 5px;
+        
+        div {
+            @include flex-center();
+
+            img {
+                margin-top: 80px;
+                margin-bottom: 40px;
+                width: 20%;
+            }
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+
+            span {
+                color: hsl(0, 0%, 59%);
+                font-weight: 400;
+            }
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .user-input {
+            @include flex-center();
+            flex-direction: column;
+
+            &_1 {
+                margin-top: 35px;
+                border: 2px solid hsl(223, 100%, 88%);
+                border-radius: 20px;
+                width: 280px;
+                height: 40px;
+                padding-left: 30px;
+            }
+
+            &_2 {
+                margin-top: 10px;
+                border-radius: 20px;
+                width: 280px;
+                height: 40px;
+                background-color: hsl(223, 87%, 63%);
+                color: #fff;
+                font-weight: 600;
+                margin-bottom: 0;
+                box-shadow: 0 8px 6px hsla(223, 87%, 63%, 0.2);
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: hsla(223, 87%, 63%, 0.8);
+                }
+            }
+        }
+
+        #error1, #error2 {
+            display: none;
+            font-size: 11px;
+            font-style: italic;
+            color: red;
+            margin-left: 8%;
+        } 
+    }
+
+    main {
+        @include flex-center();
+        flex-direction: column;
+        margin-top: 120px;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: 20px;
+
+        .icons {
+            margin-bottom: 20px;
+
+            .facebook, .twitter, .instagram {
+                background-color: #fff;
+                color: #4e78f1;
+                border-radius: 50%;
+                padding: 12px;
+                border: 2px solid hsl(223, 100%, 88%);
+                margin: 0 10px;
+            }
+
+            .facebook {
+                padding: 12px 15px;
+            }
+
+            .facebook:hover, .twitter:hover, .instagram:hover {
+                color: #fff;
+                background-color: #4e78f1;
+                border-color: transparent;
+                cursor: pointer;
+            }
+        }
+
+        .copyright {
+            color: hsl(0, 0%, 59%);
+            margin-bottom: 10px;
+            font-size: 11px;
+        }
+
+        .attribution { 
+            font-size: 11px; 
+            text-align: center;
+            
+            a { 
+                color: #4e78f1;
+                text-decoration: none;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .container {
+        header, footer {
+            position: relative;
+        }
+
+        main {
+            margin-top: 30px;
+            margin-bottom: 60px;
+
+            img {
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (min-width: 821px) {
+    .container {
+        header {
+            div {    
+                img {
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                    width: 15%;
+                }
+            }
+
+            h1 {
+                margin-bottom: 10px;
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .user-input{
+                flex-direction: row;
+                margin-top: 25px;
+
+                &_1, &_2 {
+                    margin-top: 0;
+                    margin-right: 10px;
+                }
+
+                &_1 {
+                    width: 340px;
+                }
+
+                &_2 {
+                    width: 160px;
+                }
+            }
+        }
+
+        main {
+            margin-top: 50px;
+
+            img {
+                width: 44%;
+            }
+        }
+    }
+}
